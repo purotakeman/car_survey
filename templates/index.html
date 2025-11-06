@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お気に入りの自動車アンケート</title>
+</head>
+<body>
+    <h1>お気に入りの自動車は何ですか？</h1>
+    <form action="/" method="post"> <!-- method="post"は、データをサーバに送信する方法を指定している。postは、フォームのデータをHTTPリクエストのボディに含めて送信するのでパスワードの機密情報や大量のデータを送信するに適している。 -->
+        <label for="manufacturer">自動車メーカー：</label>
+        <input type="text" id="manufacturer" name="manufacturer"><br><br>
+
+        <label for="car">自動車：</label>
+        <input type="text" id="car" name="car"><br><br>
+
+        <label for="comment">コメント：</label><br>
+        <textarea name="comment" id="comment" rows="5" cols="50"></textarea><br><br>
+        <button type="submit">送信</button>
+    </form>
+    {% if car_name %}
+        <h2>送信結果</h2>
+        <p>あなたが入力した自動車メーカーは**{{ manufacturer_name }}**じゃ！</p>
+        <p>あなたが入力した車は**{{ car_name }}**ですね！</p>
+        <p>コメント： **{{ user_comment }}**</p>
+    {% endif %}
+
+</body>
+</html>
