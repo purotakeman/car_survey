@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お気に入りの自動車アンケート</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <h1>お気に入りの自動車は何ですか？</h1>
@@ -20,9 +21,9 @@
     </form>
     {% if car_name %}
         <h2>送信結果</h2>
-        <p>あなたが入力した自動車メーカーは**{{ manufacturer_name }}**じゃ！</p>
-        <p>あなたが入力した車は**{{ car_name }}**ですね！</p>
-        <p>コメント： **{{ user_comment }}**</p>
+        <p>あなたが入力した自動車メーカーは{{ manufacturer_name }}じゃ！</p>
+        <p>あなたが入力した車は{{ car_name }}ですね！</p>
+        <p>コメント： {{ user_comment }}</p>
     {% endif %}
 
 </body>
